@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 
@@ -12,19 +12,26 @@ import { useTranslation } from './src/use-translation';
  * 스플래시 스크린 피그마 템플릿: https://www.figma.com/community/file/1155362909441341285
  */
 
- SplashScreen.preventAutoHideAsync();
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const { t, locale, setLocale } = useTranslation();
   const { cookieKey } = useCookie();
 
+  const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
-    setTimeout(() => {
+    if (locale !== null && cookieKey !== "") {
+      setIsLoaded(true);
+    }
+  }, [locale, cookieKey]);
+  useEffect(() => {
+    if (isLoaded) {
       SplashScreen.hideAsync();
-    }, 2000);
-  }, []);
+    }
+  }, [isLoaded]);
  
-  if (locale === null) return null;
+  // if (locale === null || cookieKey === "") return null;
 
   return (
     <View style={styles.container}>
