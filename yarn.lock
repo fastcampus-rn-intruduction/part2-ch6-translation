@@ -5384,6 +5384,11 @@ react-shallow-renderer@^16.15.0:
     object-assign "^4.1.1"
     react-is "^16.12.0 || ^17.0.0 || ^18.0.0"
 
+react-string-format@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-string-format/-/react-string-format-1.0.1.tgz#27241a4591ea511227041c7ae070b7149061dc00"
+  integrity sha512-wumW1tDTb7bMyNPDlkmbAZk9Ilkxzo/3LX7l5mCh9VJJX7mQPu6ip8siISzxfpCbEovalVUfRSH/PH3gqh9HNQ==
+
 react@18.1.0:
   version "18.1.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.1.0.tgz#6f8620382decb17fdc5cc223a115e2adbf104890"
